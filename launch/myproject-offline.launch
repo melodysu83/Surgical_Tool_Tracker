@@ -1,0 +1,11 @@
+<launch>
+	<arg name="path" default="/home/biorobotics/catkin_ws/src/myproject/rosbag/" />
+	<arg name="file" default="2017-06-08" />
+	<node pkg="rosbag" type="play" name="player" output="screen" args="--loop --quiet --clock $(arg path)$(arg file).bag"/>
+
+	<node name="Surgical_Tool_Tracker" pkg="myproject" type="Surgical_Tool_Tracker" output="screen" >
+		<param name="operating_mode" value="0" />
+		<param name="segmentation_version" value="4" />
+		<param name="disparity_algorithm" value="4" />
+	</node>
+</launch>

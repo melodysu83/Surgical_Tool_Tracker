@@ -1,0 +1,80 @@
+chessboard 4 corners:
+---------------------------------------------------
+(centered at chessboard center)
+-41 29 0
+41 29 0
+-41 -29 0 
+41 -29 0
+
+(centered at raven base frame origin)
+253 113 -260
+335 113 -260
+253 55 -260 
+335 55 -260
+
+
+camera pose guess:
+---------------------------------------------------
+blind guess (based on a experiment result:)
+
+-0.527818  1.5724  0.49523
+272.66 100.96 276.561
+
+
+serious guess: 
+z: -260 --> the yellow sponge
+    180 --> yellow sponge to camera
+    -80 --> camera Z AXIS
+
+y: -125 --> camera Y Axis
+
+x: 295~300 --> camera X Axis
+
+
+camera translation wrt. raven base frame
+295 -125 -80
+
+raven base frame translation wrt. camera
+-295 125 80
+
+
+so, from this reasoning, I'd like to put this to the file:
+-1.0 0 1.57
+-295 125 80
+
+seemed ok:
+-1.24 -0.085 1.09 (in degrees:  -71.0468   -4.8701   62.4524)
+-475 153 -150
+that means in the new format, it'll be:
+71.0468 4.8701 -62.4524
+70.6288 -397.786 -329.108
+---------------------------------------------------
+newest update:
+in cam_pose guess text file,
+we only input the cam origin wrt raven base frame
+(thetax,thetay,thetaz): in degrees
+(x,y,z): pose in mm
+
+reasonable but not working well:
+-120 0 0
+295 -125 -80
+
+working ok!
+-135 -5 0
+265 -145 -20
+
+
+-135 -5 0
+265 -145 -20
+
+
+
+proj matrix:
+481.530525, 0.000000, 349.165459, -28.739025, 
+0.000000, 481.530525, 204.556015, 0.000000, 
+0.000000, 0.000000, 1.000000, 0.000000
+
+
+
+
+OMG!!! everthing is resolved once the distortion is turned off!

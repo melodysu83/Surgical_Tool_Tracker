@@ -1,0 +1,29 @@
+<launch>
+ <group ns="stereo">
+
+  <node name="right" pkg="usb_cam" type="usb_cam_node" output="screen" >
+    <param name="video_device" value="/dev/video0" />
+    <param name="image_width" value="640" />
+    <param name="image_height" value="480" />
+    <param name="pixel_format" value="yuyv" />
+    <param name="camera_frame_id" value="camera_right" />
+    <param name="camera_name" value="camera_right" />
+    <param name="camera_info_url" value="file:///home/biorobotics/catkin_ws/src/myproject/camera_info/camera_intrinsics/camera_right.yaml" />
+    <param name="io_method" value="mmap"/>
+  </node>
+
+  <node name="left" pkg="usb_cam" type="usb_cam_node" output="screen" >
+    <param name="video_device" value="/dev/video1" />
+    <param name="image_width" value="640" />
+    <param name="image_height" value="480" />
+    <param name="pixel_format" value="yuyv" />
+    <param name="camera_frame_id" value="camera_left" />
+    <param name="camera_name" value="camera_left" />
+    <param name="camera_info_url" value="file:///home/biorobotics/catkin_ws/src/myproject/camera_info/camera_intrinsics/camera_left.yaml" />
+    <param name="io_method" value="mmap"/>
+  </node>
+
+ </group>
+
+
+</launch>

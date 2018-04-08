@@ -1,0 +1,17 @@
+0 64 5 600 2400 10 4 1 50 2
+
+// the set of magic numbers
+0 64 5 600 2400 10 4 1 900 2
+
+
+// what are those parameters:
+	(1)  DISP_MINDISP 	// the minimum disparity value
+	(2)  DISP_NUMDISP 	// number of disparity levels
+	(3)  DISP_WINSIZE 	// blockSize, window size
+	(4)  DISP_P1 		// panelty of neighboring pixel having disparity level difference = 1
+	(5)  DISP_P2 		// panelty of neighboring pixel having disparity level difference >= 2
+	(6)  DISP_MAXDIFF 	// the maximum allowed disparity level difference between left2right versus right2right disparity output
+	(7)  DISP_FLTRCAP 	// truncate value for prefiltered image pixels
+	(8)  DISP_UNQRATE 	// margin in percentage by which the min computed cost function value should win the second best value
+	(9)  DISP_SPKSIZE 	// a blob of smooth disparity region smaller than this number of pixels is considered noise
+	(10) DISP_SPKRNGE 	// maximum disparity variation within each connected component

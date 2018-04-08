@@ -1,0 +1,14 @@
+-3 20 20 -90
+
+//after reseating (july 10)
+-3 20 20 -90
+
+
+// for after camera recalibration (june 18)
+-34 0 18 0
+
+// for 2017-06-08
+-15 0 7 0
+
+// for 2017-05-03
+-15 0 -17 0

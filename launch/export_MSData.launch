@@ -1,0 +1,18 @@
+
+<launch>
+<arg name="path" default="/home/biorobotics/catkin_ws/src/myproject/rosbag/" />
+<arg name="file" default="2017-05-03" />
+<node pkg="rosbag" type="play" name="player" output="screen" args=" --clock --rate=0.05 $(arg path)$(arg file).bag"/>
+
+  <node name="extract" pkg="image_view" type="extract_images" respawn="false" output="screen" cwd="node">
+
+    <remap from="image" to="/stereo/left/image_raw"/>
+    <param name="filename_format" value="/home/biorobotics/Desktop/MSDataset/left_frames/%03i.jpg"/>
+  </node>
+ 
+<node name="extract2" pkg="image_view" type="extract_images" respawn="false" output="screen" cwd="node">
+
+    <remap from="image" to="/stereo/right/image_raw"/>
+    <param name="filename_format" value="/home/biorobotics/Desktop/MSDataset/right_frames/%03i.jpg"/>
+  </node>
+</launch>

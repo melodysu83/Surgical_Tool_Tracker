@@ -1,0 +1,18 @@
+
+<launch>
+<arg name="path" default="/home/biorobotics/ORB_SLAM2/ORB_SLAM2/Examples/cam_info/" />
+<arg name="file" default="round_scene" />
+<node pkg="rosbag" type="play" name="player" output="screen" args=" --clock --hz=10 --skip-empty=0.1 $(arg path)$(arg file).bag"/>
+
+  <node name="extract" pkg="image_view" type="extract_images" respawn="false" output="screen" cwd="node">
+
+    <remap from="image" to="/stereo/left/image_raw"/>
+    <param name="filename_format" value="/home/biorobotics/Desktop/OurDataset1/left_frames/%04i.jpg"/>
+  </node>
+ 
+<node name="extract2" pkg="image_view" type="extract_images" respawn="false" output="screen" cwd="node">
+
+    <remap from="image" to="/stereo/right/image_raw"/>
+    <param name="filename_format" value="/home/biorobotics/Desktop/OurDataset1/right_frames/%04i.jpg"/>
+  </node>
+</launch>
